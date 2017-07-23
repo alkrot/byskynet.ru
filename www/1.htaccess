@@ -1,0 +1,9 @@
+RewriteEngine on
+Options All -Indexes
+
+ErrorDocument 403 /errors/403.html
+ErrorDocument 404 /errors/404.html
+
+<FilesMatch ".(flv|gif|jpg|jpeg|png|ico|swf|js|css|pdf)$">
+Header set Cache-Control "max-age=2592000"
+</FilesMatch>

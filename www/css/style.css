@@ -1,0 +1,126 @@
+﻿html, body, button {
+	background-color: #F0EDF0;
+	text-align: center;
+	color: #2A5A45;
+	font-family: sans-serif;
+	word-wrap: break-word;
+}
+
+a {
+	text-decoration: none;
+	color: #2A5A45;
+}
+
+textarea {
+	resize: none;
+	height: 200px;
+	width: 50%;
+}
+
+button {
+	width: 50%;
+	height: 70px;
+	border: 0px;
+	font-size: 150%;
+	cursor: pointer;
+	border-radius: 5px;
+	background-color: #D1E0D3;
+}
+
+#anon_poll {
+	display: none;
+}
+
+.menu {
+	list-style: none;
+	padding: 0px;
+	margin: 0;
+	width: 100%;
+}
+
+.menu li {
+	font-size: 200%;
+	margin-top: 2%;
+	padding: 5px;
+	display: inline-block;
+	background-color: #D1E0D3;
+	border-radius: 5px;
+}
+
+p {
+	font-size: 32pt;
+}
+
+span {
+	font-size: 24pt;
+}
+
+.comment, .post, .poll {
+	background-color: #F0EDF0;
+	position: absolute;
+	width: 99%;
+}
+
+.menu {
+	display: inline-block;
+	list-style: none;
+}
+
+#post {
+	display: block;
+}
+
+#poll {
+	display: none;
+}
+
+#comment {
+	display: none;
+}
+
+.button_poll {
+/* 	margin-top: 5px; */
+	display: inline-block;
+	width: auto;
+	height: auto;
+	font-weight: bold;
+	font-size: 200%;
+}
+
+.url, .title_poll, .answer_poll {
+	border-radius: 5px;
+	padding: 5px;
+	width: 50%;
+}
+
+.answer_poll {
+	width: 90%;
+}
+
+.answer_poll_list {
+	padding-top: 10px;
+	display:inline-block;
+	width: 50%;
+}
+
+.results {
+	display: none;
+	z-index: 10000;
+	position: absolute;
+	background-color: rgba(209,224,211,0.7);
+	border-radius: 10px;
+	width: 98%;
+	top: 35%;
+	font-size: 200%;
+	cursor: pointer;
+	color: red;
+}
+
+#error {
+	font-size: 150%;
+	color: red;
+}
+
+button:hover, a:hover {
+	color: rgba(42,90,69,0.5);
+}

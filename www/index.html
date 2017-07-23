@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Под скайнет</title>
+		<link href="image/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+		<link rel="stylesheet" href="css/style.css">
+		<script type="text/javascript" src="scripts/poll.js"></script>
+		<script type="text/javascript" src="scripts/jq-min.js"></script>
+		<script type="text/javascript" src="scripts/script.js"></script>
+		<meta name="viewport" content="width=600, user-scalable=yes">
+	</head>
+	<body>
+		<!--LiveInternet counter--><script type="text/javascript">
+	document.write("<a href='//www.liveinternet.ru/click' "+
+	"target=_blank><img style='display: none;' src='//counter.yadro.ru/hit?t26.15;r"+
+	escape(document.referrer)+((typeof(screen)=="undefined")?"":
+	";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+	screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+	";h"+escape(document.title.substring(0,80))+";"+Math.random()+
+	"' alt='' title='LiveInternet: показано число посетителей за"+
+	" сегодня' "+
+	"border='0' width='88' height='15'><\/a>")
+	</script><!--/LiveInternet-->
+	<div class="results" id="results" onclick="accept()">
+		<div class="info">
+			<span id="info_text">info</span>
+		</div>
+	</div>
+		<div class="header">
+			<div id="menu">
+				<ul class="menu">
+					<li><a href="#post">Отправить запись</a></li>
+					<li><a href="#comment">Отправить комментарий</a></li>
+					<li><a href="#poll">Отправить опрос</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="post" id="post">
+			<p>Запись</p>
+			<form method="POST" id="formPost">
+				<div class="message">
+					<textarea name="post_message"></textarea>
+				</div>
+				<button type="button" onclick="AFR('info_text','formPost','php/send.php')">Отправить</button>
+			</form>
+		</div>
+		<div class="comment"  id="comment">
+			<p>Комментарий</p>
+			<form method="POST" id="formComment">
+				<input class="url" name="url" type="url" placeholder="https://vk.com/wall-116246654_475?reply=480 или https://vk.com/wall-116246654_475">
+				<div class="message">
+					<textarea name="comment_message"></textarea>
+				</div>
+				<button type="button" onclick="AFR('info_text','formComment','php/send_comment.php')">Отправить</button>
+			</form>
+		</div>
+		<div class="poll" id="poll">
+			<p>Тема опроса</p>
+			<form method="POST" id="formPoll">
+				<div>
+					<input type="text" class="title_poll" name="title_poll">
+				</div>
+				<div class="answer_poll_list">
+						<input type="checkbox" name="anon_poll" id="anon_poll">
+						<button onclick="isAnon()" id="btn_anon" class="button_poll" type="button">Открытый</button>
+						<button onclick="addLi()" class="button_poll" type="button">+</button>
+						<button onclick="deleteLi()" class="button_poll" type="button">-</button>
+					<div id="error"></div>
+					<ol id="answers">
+						<li><input type="text" class="answer_poll" name="answer1" placeholder="Вариант ответа"></li>
+					</ol>
+				</div>
+				<button type="button" onclick="AFR('info_text','formPoll','php/send_poll.php')">Отправить</button>
+			</form>
+		</div>
+	</body>
+</html>
